@@ -4,10 +4,10 @@ from pymongo.server_api import ServerApi
 
 app = Flask(__name__)
 
-uri = "mongodb+srv://Arturo:<db_password>@crud.qnjuw.mongodb.net/?retryWrites=true&w=majority&appName=Crud"
+uri = "mongodb+srv://Arturo:Arturo@crud.qnjuw.mongodb.net/?retryWrites=true&w=majority&appName=Crud"
 client = MongoClient(uri, server_api=ServerApi('1'))
 db = client["flaskgames"]
-datos = db.datos
+videojuegos = db.videojuegos
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -23,7 +23,7 @@ def añadir():
         color = request.form.get("color")
         animal = request.form.get("animal")
 
-        datos.insert_one({"nombre": nombre, "apellido": apellido, "color": color, "animal":animal})
+        videojuegos.insert_one({"nombre": nombre, "apellido": apellido, "color": color, "animal":animal})
         print ("Añadido con exito")
 
     return render_template("añadir.html")

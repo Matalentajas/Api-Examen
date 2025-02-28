@@ -1,0 +1,3 @@
+Luis se que la aplicación que he subido a render no es la que he ralizado pero como no encuentro el motivo por el que mongo me salta el error de SSL he subido a render otra app sencilla que hice hace tiempo.
+
+https://examen-ank0.onrender.com
